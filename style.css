@@ -1,0 +1,455 @@
+/* --- LOGO --- */
+.logo-img {
+  height: 50px;
+  width: auto;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+/* 🌍 RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: black;
+  line-height: 1.6;
+}
+
+/* 🧭 CONTAINER PADRÃO */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🌟 CABEÇALHO */
+header {
+  background: black;
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+header .logo span {
+  color: #00bcd4;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00bcd4;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🏠 HERO / INÍCIO COM VÍDEO */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* overlay escuro para legibilidade */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: #008394;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: #008394;
+  color: #fff;
+}
+
+/* 💡 SEÇÕES GERAIS */
+section {
+  padding: 4rem 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color:  #00bcd4;
+}
+
+/* 👨‍💻 SOBRE MIM */
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* 🧱 PROJETOS */
+.projects .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: #00bcd4;
+  margin-bottom: 0.5rem;
+}
+
+/* ✉️ CONTATO */
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  color:  #00bcd4;
+}
+
+/* ⚙️ RODAPÉ */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+footer .social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+footer .social li {
+  margin: 0;
+}
+
+footer .social a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+footer .social a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* 📱 RESPONSIVIDADE */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  footer .social {
+    gap: 1rem;
+  }
+}
+
+/* 📱 MENU RESPONSIVO */
+.menu-btn {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .navbar ul.open {
+    display: flex;
+  }
+
+  .menu-btn.active {
+    color: #00bcd4;
+  }
+}
+
+/* 🔝 BOTÃO VOLTAR AO TOPO */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ✨ ANIMAÇÕES */
+section, .card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+section.show, .card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌙 DARK MODE */
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+#theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header,
+body.dark footer {
+  background: #1e1e1e;
+  color: #ccc;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .btn {
+  background: #00bcd4;
+  color: #fff;
+}
+
+body.dark .navbar a:hover {
+  color: #f3f3f3;
+}
+
+body.dark .back-to-top {
+  background: #00bcd4;
+}
+
+/* 🟩 BARRA DE TAREFAS GRANDE */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO E LINKS */
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #00bcd4;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f0f0f0;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+main {
+  margin-top: 110px;
+}
