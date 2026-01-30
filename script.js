@@ -439,6 +439,7 @@ function initContactForm() {
         e.preventDefault();
         
         // Simular envio
+        // NOTA: Para funcionar de verdade, você precisará de um backend ou serviço como EmailJS
         const btn = form.querySelector('button[type="submit"]');
         const originalText = btn.innerHTML;
         btn.innerHTML = '<span>Enviando...</span><i class="fas fa-spinner fa-spin"></i>';
