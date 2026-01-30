@@ -1,118 +1,680 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio e blog de Árlei Batista — programação, tecnologia e web design.">
-    <title>Árlei Batista | Desenvolvedor Web</title>
+    <meta name="description" content="Portfólio de Árlei Batista - Desenvolvedor Web Full Stack especializado em criar experiências digitais incríveis.">
+    <title>Árlei Batista | Desenvolvedor Web Full Stack</title>
     
     <!-- SEO e Open Graph -->
-    <meta property="og:title" content="Portfólio de Árlei Batista" />
-    <meta property="og:description" content="Confira meus projetos e aprendizados em desenvolvimento web." />
-    <meta property="og:image" content="https://meusite.com/imagem-capa.jpg" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://meusite.com" />
-
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="img02.png" type="image/png">
+    <meta property="og:title" content="Árlei Batista | Desenvolvedor Web Full Stack">
+    <meta property="og:description" content="Transformando ideias em experiências digitais extraordinárias.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arleibatista.dev">
+    <meta property="og:image" content="https://arleibatista.dev/preview-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-
-<header class="top-bar">
-    <div class="container">
-        <a href="#inicio" class="logo">
-            <img src="img02.png" alt="Logo Árlei Batista" class="logo-img">
-        </a>
-        <div class="logo">Árlei <span>Santos</span></div>
-        <button class="menu-btn">☰</button>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#inicio" class="active">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+    <!-- Cursor Personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Partículas de Fundo -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Árlei<span class="logo-accent">.</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
-        </nav>
-        <button id="theme-toggle">🌙</button>
-    </div>
-</header>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-<main>
-    <!-- Seção Herói com Vídeo de Fundo -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <video autoplay muted loop class="hero-video">
-            <source src="VIDEOLOOP.mp4" type="video/mp4">
-            <source src="seu-video.webm" type="video/webm">
-            Seu navegador não suporta vídeos.
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h2>Olá, eu sou <span>Árlei Santos</span></h2>
-            <p>Técnico em Sistemas para Internet, Desenvolvedor Web (focado em front-end/back-end) 🧑🏽‍💻</p>
-            <a href="#projetos" class="btn">Ver Projetos</a>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                <span>Disponível para projetos</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Olá, eu sou</span>
+                <span class="title-name">Árlei Santos</span>
+            </h1>
+            <div class="hero-role">
+                <span class="role-prefix">Desenvolvedor</span>
+                <span class="role-animated">
+                    <span class="role-word active">Full Stack</span>
+                    <span class="role-word">Front-end</span>
+                    <span class="role-word">Back-end</span>
+                    <span class="role-word">Web</span>
+                </span>
+            </div>
+            <p class="hero-description">
+                Transformo ideias em experiências digitais extraordinárias. 
+                Especializado em criar soluções web modernas, responsivas e de alto desempenho.
+            </p>
+            <div class="hero-cta">
+                <a href="#projetos" class="btn btn-primary">
+                    <span>Ver Projetos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contato" class="btn btn-secondary">
+                    <span>Vamos Conversar</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="6">0</span>
+                    <span class="stat-suffix"></span>
+                    <span class="stat-label">Mês de Experiência</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Projetos Entregues</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-suffix">%</span>
+                    <span class="stat-label">Satisfação Cliente</span>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <!-- Sobre mim -->
-    <section id="sobre" class="about">
-        <div class="container">
-            <h2>Sobre mim</h2>
-            <p>Meu nome é Árlei e atualmente estou cursando o Técnico em Informática para Internet, área pela qual tenho grande interesse e na qual busco me desenvolver profissionalmente. Durante minha formação, venho adquirindo conhecimentos em desenvolvimento de sites, programação, banco de dados e manutenção de sistemas, além de práticas voltadas para o design e funcionamento de páginas web.
-
-Posso mencionar aqui alguma experiência anterior, mesmo que breve ou em outra área — atendimento ao público, auxiliar logístico, auxiliar de escritório, estágio, etc.], que me ajudou a desenvolver habilidades importantes como responsabilidade, trabalho em equipe e boa comunicação.
-
-Meu objetivo é colocar em prática o que estou aprendendo, contribuir com a equipe e continuar evoluindo na área da tecnologia. Tenho disposição para aprender, compromisso com a qualidade do meu trabalho e entusiasmo em enfrentar novos desafios.
-
-Agradeço a atenção e a oportunidade de apresentar um pouco sobre mim. Fico à disposição para uma entrevista.
-
-Atenciosamente,
-Árlei Santos.</p>
-        </div>
-    </section>
-
-    <!-- Projetos -->
-    <section id="projetos" class="projects">
-        <div class="container">
-            <h2>Projetos Recentes</h2>
-            <div class="cards">
-                <article class="card">
-                    <img src="img01.avif" alt="programação">
-                    <h3>Site de Viagens</h3>
-                    <p>Landing page interativa com HTML, CSS e JavaScript.</p>
-                    <a href="#" class="btn">Ver mais</a>
-                </article>
-
-                <article class="card">
-                    <img src="" alt="">
-                    <h3>Galeria de Fotos</h3>
-                    <p>Aplicação dinâmica com animações e responsividade.</p>
-                    <a href="#" class="btn">Ver mais</a>
-                </article>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contact">
+    <!-- Sobre Section -->
+    <section id="sobre" class="about">
         <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato comigo pelas redes sociais:</p>
+            <div class="section-header">
+                <span class="section-tag">Sobre Mim</span>
+                <h2 class="section-title">Quem sou <span class="highlight">eu</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="image-glow"></div>
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="exp-number">6</span>
+                        <span class="exp-text">Mês de<br>Experiência</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="text-block">
+                        <p class="lead">
+                            Sou um <strong>Desenvolvedor Web Full Stack</strong> apaixonado por tecnologia e inovação. 
+                            Atualmente cursando Técnico em Informática para Internet, venho construindo uma sólida 
+                            base de conhecimentos em desenvolvimento web.
+                        </p>
+                        <p>
+                            Minha jornada na programação começou com a curiosidade de entender como as coisas funcionam 
+                            na internet. Hoje, transformo essa curiosidade em <strong>soluções criativas</strong> que 
+                            resolvem problemas reais e entregam valor aos usuários.
+                        </p>
+                        <p>
+                            Acredito que o bom desenvolvimento vai além do código — é sobre criar 
+                            <strong>experiências memoráveis</strong>, interfaces intuitivas e performace excepcional. 
+                            Cada projeto é uma oportunidade de aprender, inovar e superar expectativas.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Criativo</h4>
+                                <p>Soluções inovadoras para cada desafio</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Proativo</h4>
+                                <p>Sempre em busca de novos conhecimentos</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Colaborativo</h4>
+                                <p>Trabalho em equipe é fundamental</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-</main>
 
-<!-- Rodapé com redes sociais -->
-<footer>
-    <div class="container">
-        <ul class="social">
-            <li><a href="https://www.instagram.com/el_arlleyy/" target="_blank">📸 Instagram</a></li>
-            <li><a href="https://github.com/arlei2019" target="_blank">💻 GitHub</a></li>
-            <li><a href="mailto:arlei.bsantos@senacsp.edu.br">📧 E-mail</a></li>
-        </ul>
-        <p>&copy; 2025 Árlei Batista | Todos os direitos reservados.</p>
-    </div>
-</footer>
+    <!-- Habilidades Section -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Minhas Skills</span>
+                <h2 class="section-title">Tecnologias & <span class="highlight">Habilidades</span></h2>
+            </div>
+            <div class="skills-content">
+                <div class="skills-categories">
+                    <button class="category-btn active" data-category="frontend">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Front-end</span>
+                    </button>
+                    <button class="category-btn" data-category="backend">
+                        <i class="fas fa-server"></i>
+                        <span>Back-end</span>
+                    </button>
+                    <button class="category-btn" data-category="tools">
+                        <i class="fas fa-tools"></i>
+                        <span>Ferramentas</span>
+                    </button>
+                </div>
+                
+                <div class="skills-grid active" data-category="frontend">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>HTML5</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="50"></div>
+                            </div>
+                            <span class="skill-percent">50%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>CSS3</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="50"></div>
+                            </div>
+                            <span class="skill-percent">50%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>JavaScript</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="30"></div>
+                            </div>
+                            <span class="skill-percent">30%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>React</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="10"></div>
+                            </div>
+                            <span class="skill-percent">10%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Bootstrap</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Tailwind CSS</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="20"></div>
+                            </div>
+                            <span class="skill-percent">20%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-grid" data-category="backend">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Node.js</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="10"></div>
+                            </div>
+                            <span class="skill-percent">10%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>MySQL</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="78"></div>
+                            </div>
+                            <span class="skill-percent">78%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>PHP</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="72"></div>
+                            </div>
+                            <span class="skill-percent">72%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Firebase</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="65"></div>
+                            </div>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-grid" data-category="tools">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Git</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60"></div>
+                            </div>
+                            <span class="skill-percent">60%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>GitHub</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>VS Code</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60"></div>
+                            </div>
+                            <span class="skill-percent">60%</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Figma</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="30"></div>
+                            </div>
+                            <span class="skill-percent">30%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- Projetos Section -->
+    <section id="projetos" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfólio</span>
+                <h2 class="section-title">Projetos <span class="highlight">Recentes</span></h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/arlei2019" class="project-link" title="Ver projeto">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/arlei2019" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <h3 class="project-title">Site de Viagens</h3>
+                        <p class="project-description">
+                            Landing page interativa para uma agência de viagens, com design moderno, 
+                            animações suaves e totalmente responsiva. Inclui galeria de destinos e formulário de contato.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver projeto">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                        <h3 class="project-title">Galeria de Fotos</h3>
+                        <p class="project-description">
+                            Aplicação dinâmica para exibição de fotos com filtros, 
+                            animações e layout responsivo.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver projeto">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                        <h3 class="project-title">E-commerce</h3>
+                        <p class="project-description">
+                            Loja virtual completa com carrinho de compras, 
+                            checkout e integração com pagamentos.
+                        </p>
+                    </div>
+                </article>
+                
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver projeto">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <h3 class="project-title">Gerenciador de Tarefas</h3>
+                        <p class="project-description">
+                            App de produtividade com autenticação, 
+                            sync em tempo real e interface intuitiva.
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <div class="projects-cta">
+                <a href="https://github.com/arlei2019" target="_blank" class="btn btn-outline">
+                    <span>Ver mais no GitHub</span>
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contato</span>
+                <h2 class="section-title">Vamos <span class="highlight">Conversar</span></h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-text">
+                        <p class="lead">
+                            Tem um projeto em mente ou quer conversar sobre oportunidades? 
+                            Estou sempre aberto a novos desafios e parcerias!
+                        </p>
+                        <p>
+                            Preencha o formulário ao lado ou me contate diretamente pelas redes sociais. 
+                            Responderei o mais breve possível.
+                        </p>
+                    </div>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Email</span>
+                                <a href="mailto:arlei.bsantos@senacsp.edu.br">arlei.bsantos@senacsp.edu.br</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Localização</span>
+                                <span>São Paulo, Brasil</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Disponibilidade</span>
+                                <span>Seg - Sex: 9h às 18h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/arlei2019" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/el_arlleyy/" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:arlei.bsantos@senacsp.edu.br" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Seu Nome</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Seu Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
+                            <label for="subject">Assunto</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                            <label for="message">Sua Mensagem</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Enviar Mensagem</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="form-success" id="form-success">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Mensagem Enviada!</h3>
+                        <p>Obrigado pelo contato. Responderei em breve!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#inicio" class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>Árlei<span class="logo-accent">.</span><span class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p>Transformando ideias em experiências digitais extraordinárias.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="#inicio">Início</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#habilidades">Habilidades</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Social</h4>
+                        <ul>
+                            <li><a href="https://github.com/arlei2019" target="_blank">GitHub</a></li>
+                            <li><a href="https://www.instagram.com/el_arlleyy/" target="_blank">Instagram</a></li>
+                            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Árlei Batista. Todos os direitos reservados.</p>
+                <p class="footer-credit">Feito com <i class="fas fa-heart"></i> e muito <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
