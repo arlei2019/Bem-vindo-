@@ -430,6 +430,9 @@ function initSkillTabs() {
 // FORMULÁRIO DE CONTATO
 // ============================================
 function initContactForm() {
+    // 1. INICIALIZE COM SUA CHAVE PÚBLICA
+    emailjs.init("JWULWaOgToMA3-R08"); // Substitua pelo seu User ID do EmailJS
+
     const form = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
     
@@ -438,26 +441,37 @@ function initContactForm() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Simular envio
-        // NOTA: Para funcionar de verdade, você precisará de um backend ou serviço como EmailJS
         const btn = form.querySelector('button[type="submit"]');
         const originalText = btn.innerHTML;
+        
+        // Efeito visual de carregamento
         btn.innerHTML = '<span>Enviando...</span><i class="fas fa-spinner fa-spin"></i>';
         btn.disabled = true;
-        
-        setTimeout(() => {
-            form.style.display = 'none';
-            success.classList.add('show');
-            
-            // Reset após 5 segundos
-            setTimeout(() => {
-                form.reset();
-                form.style.display = 'grid';
-                success.classList.remove('show');
+
+        // 2. ENVIO REAL PELO EMAILJS
+        const serviceID = 'service_oq8wkld';
+        const templateID = 'template_kxqwbep';
+
+        emailjs.sendForm(serviceID, templateID, form)
+            .then(() => {
+                // Sucesso real: Esconde o form e mostra a mensagem
+                form.style.display = 'none';
+                success.classList.add('show');
+                
+                // Reset após 5 segundos
+                setTimeout(() => {
+                    form.reset();
+                    form.style.display = 'grid'; 
+                    success.classList.remove('show');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 5000);
+            }, (error) => {
+                // Se der erro (ex: internet caiu ou chaves erradas)
+                alert("Erro ao enviar: " + JSON.stringify(error));
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-            }, 5000);
-        }, 1500);
+            });
     });
 }
 
